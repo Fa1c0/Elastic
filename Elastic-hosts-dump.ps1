@@ -1,5 +1,6 @@
 # Simple script to create a list of Windows Servers and Desktops that have logged in the last hour.
 # Endpoint URLs need amended before running.
+# 2 Csv's are created in the dir where this is run listing hosts.
 
 try { del .\Elastic_windows_servers.csv -ErrorAction SilentlyContinue}
 catch { }
