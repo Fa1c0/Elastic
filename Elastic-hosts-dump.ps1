@@ -1,4 +1,7 @@
-﻿try { del .\Elastic_windows_servers.csv -ErrorAction SilentlyContinue}
+# Simple script to create a list of Windows Servers and Desktops that have logged in the last hour.
+# Endpoint URLs need amended before running.
+
+try { del .\Elastic_windows_servers.csv -ErrorAction SilentlyContinue}
 catch { }
 try { del .\Elastic_desktops.csv -ErrorAction SilentlyContinue}
 catch { }
@@ -6,8 +9,9 @@ catch { }
 $User = Read-host "Enter Username"
 $Pass = Read-host "Enter Password"
 
+# Server search.
 try{
-$servers = curl.exe -u $User':'$Pass -X GET -s "<elastic_search_endpoint>:9243/<windows_security_index>/_search" -H 'Content-Type: application/json' -d'
+$servers = curl.exe -u $User':'$Pass -X GET -s "<elastic_search_endpoint>:9243/<windows_system.security_index>/_search" -H 'Content-Type: application/json' -d'
 {
   ""query"": {
     ""bool"": {
@@ -45,8 +49,9 @@ $servers >> Elastic_windows_servers.csv
 Write-Output ""
 Write-Output "$($servers.count) Windows Servers logging"
 
+# Desktop search.
 try{
-$desktops = curl.exe -u $User':'$Pass -X GET -s "<elastic_search_endpoint>:9243/<desktops_security_index>/_search" -H 'Content-Type: application/json' -d'
+$desktops = curl.exe -u $User':'$Pass -X GET -s "<elastic_search_endpoint>:9243/<windows_system.security_index>/_search" -H 'Content-Type: application/json' -d'
 {
   ""query"": {
     ""bool"": {
