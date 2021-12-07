@@ -1,6 +1,6 @@
 # Include hosts.txt file in the same directory as script is ran from.
 # File should contain a list of resovlable hostsnames.
-# Make sure to update the endpoint for API.
+# Make sure to update the endpoint for API - LINE 53.
 
 write-host "▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄"
 write-host "██░▄▄▄█░██░▄▄▀█░▄▄█▄░▄██▄██▀▄▀████░██░█▀▄▄▀█░▄▄█▄░▄████░▄▄▀█░████░▄▄█▀▄▀█░█▀█░▄▄█░▄▄▀"
