@@ -17,7 +17,8 @@ try{
 del .\results.csv
 }
 catch
-{}
+{
+}
 New-item results.csv
 Set-Content results.csv 'IP, State'
 write-output ""
